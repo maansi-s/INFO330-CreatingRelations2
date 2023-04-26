@@ -15,7 +15,7 @@ FROM abilities_2nf;
 -- pokedex # --> everything else
 CREATE TABLE other_threenf AS
 SELECT DISTINCT pokedex_number, name, type1, type2, attack, base_egg_steps, base_happiness, base_total,
-capture_rate, classfication, defense, experience_growth, height_m, hp, percentage_male, pokedex_number,
+capture_rate, classfication, defense, experience_growth, height_m, hp, percentage_male,
 sp_attack, sp_defense, speed, weight_kg, generation, is_legendary
 FROM other_2nf;
 

@@ -1,44 +1,36 @@
--- extra credit #1: Introduce new Pokemon
+-- EXTRA CREDIT #1: Introduce new Pokemon
 
 -- first pokemon
-INSERT INTO info_threenf (name, attack, classfication)
-VALUES ('Huskichu', '40', 'Seed Pokémon');
+INSERT INTO abilities_threenf (pokedex_number, ability)
+VALUES ('802', 'Soul-Heart');
 
-INSERT INTO scores_threenf (attack, classfication, against_bug, against_dark, against_dragon, against_electric,
-against_fairy, against_fight,
+INSERT INTO other_threenf (pokedex_number, name, type1, type2, attack, base_egg_steps, base_happiness, base_total,
+capture_rate, defense, classfication, hp, experience_growth, height_m,
+sp_attack, percentage_male, sp_defense, speed, weight_kg, generation, is_legendary)
+VALUES ('802', 'Huskichu', 'Mascot', NULL, '65', '5120', '70', '600', '300', '45', 'Seed Pokémon', '63', '1059860',
+'1.0', '39', '88.1', '80', '60', '100.0', '1', '0');
+
+INSERT INTO against_threenf (type1, type2, against_bug, against_dark, against_dragon, against_electric, against_fairy, against_fight,
 against_fire, against_flying, against_ghost, against_grass, against_ground, against_ice, against_normal, against_poison,
 against_psychic, against_rock, against_steel, against_water)
-VALUES ('40', 'Seed Pokémon', '1', '1', '1', '0.5', '1', '0.25', '0.5', '1', '0.5', '0.25', '0.25', '1', '1', '0.5', '0.25', '1', '1', '1');
-
-INSERT INTO pokedex_threenf (name, pokedex_number)
-VALUES ('Huskichu', '802');
-
-INSERT INTO name_threenf (name, ability, base_egg_steps, base_happiness, base_total, capture_rate, defense, experience_growth,
-height_m, hp, percentage_male, sp_attack, sp_defense, speed, type1, type2, weight_kg, generation, is_legendary)
-VALUES ('Huskichu', 'Shed Skin', '5120', '70', '405', '45', '49', '1059860', '0.7', '60', '88.2', '60', '120', '60', 'Mascot', NULL, '6.9', '1', '0');
+VALUES ('Mascot', NULL, '1', '1', '1', '0.5', '1', '0.25', '0.5', '1', '0.5', '0.25', '0.25', '1', '1', '0.5', '0.25', '1', '1', '1');
 
 -- second pokemon
-INSERT INTO info_threenf (name, attack, classfication)
-VALUES ('Cougarite', '20', 'Seed Pokémon');
+INSERT INTO abilities_threenf (pokedex_number, ability)
+VALUES ('803', 'Shed Skin');
 
-INSERT INTO scores_threenf (attack, classfication, against_bug, against_dark, against_dragon, against_electric,
-against_fairy, against_fight,
+INSERT INTO other_threenf (pokedex_number, name, type1, type2, attack, base_egg_steps, base_happiness, base_total,
+capture_rate, defense, classfication, hp, experience_growth, height_m,
+sp_attack, percentage_male, sp_defense, speed, weight_kg, generation, is_legendary)
+VALUES ('803', 'Cougarite', 'Mascot', NULL, '5', '5120', '70', '600', '300', '45', 'Flame Pokémon', '63', '1059860',
+'0.9', '100', '50', '70', '50', '20.0', '2', '0');
+
+INSERT INTO against_threenf (type1, type2, against_bug, against_dark, against_dragon, against_electric, against_fairy, against_fight,
 against_fire, against_flying, against_ghost, against_grass, against_ground, against_ice, against_normal, against_poison,
 against_psychic, against_rock, against_steel, against_water)
-VALUES ('20', 'Seed Pokémon', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+VALUES ('Mascot', NULL, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 
-INSERT INTO pokedex_threenf (name, pokedex_number)
-VALUES ('Cougarite', '803');
-
-INSERT INTO name_threenf (name, ability, base_egg_steps, base_happiness, base_total, capture_rate, defense, experience_growth,
-height_m, hp, percentage_male, sp_attack, sp_defense, speed, type1, type2, weight_kg, generation, is_legendary)
-VALUES ('Cougarite', 'Shed Skin', '5120', '70', '405', '45', '49', '1059860', '0.7', '60', '88.2', '60', '120', '60', 'Mascot', NULL, '6.9', '1', '0');
-
-
-
-
-
--- extra credit #2: Support your local Pokemon trainer!
+-- EXTRA CREDIT #2: Support your local Pokemon trainer!
 
 CREATE TABLE trainer (
     first_name varchar(80) NOT NULL,
@@ -71,7 +63,6 @@ ADD COLUMN pokemon9 varchar(80);
 ALTER TABLE trainer_info
 ADD COLUMN pokemon10 varchar(80);
 
-
 INSERT INTO trainer (first_name, last_name)
 VALUES ('Maansi', 'Surve');
 INSERT INTO trainer (first_name, last_name)
@@ -80,7 +71,6 @@ INSERT INTO trainer (first_name, last_name)
 VALUES ('Ted', 'Neward');
 INSERT INTO trainer (first_name, last_name)
 VALUES ('Abigail', 'Setiawan');
-
 
 UPDATE trainer_info SET
 	favorite_pokemon_types = '[Mascot,  Bug]',
