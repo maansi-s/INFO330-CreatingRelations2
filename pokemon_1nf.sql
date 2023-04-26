@@ -26,3 +26,4 @@ against_psychic, against_rock, against_steel, against_water, attack, base_egg_st
 capture_rate, classfication, defense, experience_growth, height_m, hp, name, percentage_male, pokedex_number,
 sp_attack, sp_defense, speed, type1, type2, weight_kg, generation, is_legendary
 FROM one_nf;
+
