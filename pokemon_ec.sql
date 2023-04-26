@@ -1,6 +1,6 @@
 -- EXTRA CREDIT #1: Introduce new Pokemon
 
--- first pokemon
+-- inserting first pokemon's data
 INSERT INTO abilities_threenf (pokedex_number, ability)
 VALUES ('802', 'Soul-Heart');
 
@@ -15,7 +15,7 @@ against_fire, against_flying, against_ghost, against_grass, against_ground, agai
 against_psychic, against_rock, against_steel, against_water)
 VALUES ('Mascot', NULL, '1', '1', '1', '0.5', '1', '0.25', '0.5', '1', '0.5', '0.25', '0.25', '1', '1', '0.5', '0.25', '1', '1', '1');
 
--- second pokemon
+-- inserting second pokemon's data
 INSERT INTO abilities_threenf (pokedex_number, ability)
 VALUES ('803', 'Shed Skin');
 
@@ -30,13 +30,16 @@ against_fire, against_flying, against_ghost, against_grass, against_ground, agai
 against_psychic, against_rock, against_steel, against_water)
 VALUES ('Mascot', NULL, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 
+
 -- EXTRA CREDIT #2: Support your local Pokemon trainer!
 
+-- create table about trainers
 CREATE TABLE trainer (
     first_name varchar(80) NOT NULL,
     last_name varchar(80) NOT NULL
 );
 
+-- create table about trainer's teams by grabbing trainer info and then adding columns for team info
 CREATE TABLE trainer_info AS
 SELECT * from trainer;
 
@@ -63,6 +66,7 @@ ADD COLUMN pokemon9 varchar(80);
 ALTER TABLE trainer_info
 ADD COLUMN pokemon10 varchar(80);
 
+-- add data to table abot trainer info
 INSERT INTO trainer (first_name, last_name)
 VALUES ('Maansi', 'Surve');
 INSERT INTO trainer (first_name, last_name)
@@ -72,6 +76,7 @@ VALUES ('Ted', 'Neward');
 INSERT INTO trainer (first_name, last_name)
 VALUES ('Abigail', 'Setiawan');
 
+-- add data attached to each trainer's name for the other columns
 UPDATE trainer_info SET
 	favorite_pokemon_types = '[Mascot,  Bug]',
 	pokemon1='Charmander',

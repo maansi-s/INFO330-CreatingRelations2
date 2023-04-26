@@ -1,9 +1,10 @@
--- making 2NF
-
+-- making a separate table connecting pokedex number to abilities to avoid duplicates (since one pokedex
+--      number can have multiple abilities)
 CREATE TABLE abilities_2nf AS
 SELECT pokedex_number, value AS ability
 FROM final_one_nf;
 
+-- make another table connecting pokedex number to the rest of the data columns
 CREATE TABLE other_2nf AS
 SELECT DISTINCT pokedex_number, name, against_bug, against_dark, against_dragon, against_electric, against_fairy, against_fight,
 against_fire, against_flying, against_ghost, against_grass, against_ground, against_ice, against_normal, against_poison,
